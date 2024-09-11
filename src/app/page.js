@@ -1,95 +1,70 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from "next/image"
+import Head from "next/head"
+import Link from "next/link"
+
+
+import Homegraphic from "@/components/homegraphic"
+import TitoImport from "@/components/tito_import"
+import {FlipLinkNav, FlipLink} from "@/components/flipLink"
+
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div>
+      <Head>
+        <title>Lolo's Website</title>
+      </Head>
+      <main className="px-10">
+        <section className="min-h-0">
+          <header className="navbar mb-12 flex justify-between">
+            <div className="navbar-start">
+              <Link href="/">LOGO</Link>
+            </div>
+            <div className="navbar-end">
+              <div>
+                  <FlipLinkNav href="/sculptures">Sculptures</FlipLinkNav></div>
+              <div>
+                  <FlipLinkNav href="/shoes">Shoes</FlipLinkNav></div>
+            </div>
+          </header>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+          <div className=" text-center">
+            <p className="text-md py-5 leading-8">
+              An artist and designer currently studying in London.
+            </p>
+          </div>
+        </section>
+        <section className="h-screen">
+          {/* <Homegraphic scale={100}/> */}
+          <TitoImport/>
+          
+        </section>
+        <section>
+          <FlipLink
+            href="https://www.instagram.com/wersdiese/"
+            >
+              INSTAGRAM</FlipLink>
+        </section>
+        
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+<footer className="rounded-lg shadow m-4 dark:bg-blue-800">
+    <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-left md:justify-between">
+      <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://cgidoggs.world//" className="hover:underline">cgistudio</a>. All Rights Reserved.
+    </span>
+    <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+        <li>
+            <a href="#" className="hover:underline me-4 md:me-6">About</a>
+        </li>
+        <li>
+            <a href="#" className="hover:underline">Contact</a>
+        </li>
+    </ul>
+    </div>
+</footer>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+      </main>
+    </div>
+  )
 }
