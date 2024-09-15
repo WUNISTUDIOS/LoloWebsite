@@ -1,11 +1,28 @@
 import Image from "next/image"
 import Head from "next/head"
 import Link from "next/link"
+import dynamic from "next/dynamic"
+import localFont from 'next/font/local'
+
 
 
 import Homegraphic from "@/components/homegraphic"
 import TitoImport from "@/components/tito_import"
 import {FlipLinkNav, FlipLink} from "@/components/flipLink"
+
+const CompTito = dynamic(() => import('@/components/tito_import'),{
+  ssr:false,
+})
+
+const GroupAnimImport = dynamic(() => import('@/components/import_groupanim'),{
+  ssr:false,
+})
+
+const NanoFont = localFont({ 
+  src: '../../public/fonts/NaNHoloGigawide-Ultra.ttf', 
+  weight: '700', 
+  variable: '--font-nano',
+})
 
 
 export default function Home() {
@@ -14,7 +31,7 @@ export default function Home() {
       <Head>
         <title>Lolo's Website</title>
       </Head>
-      <main className="px-10">
+      <main className={NanoFont.className}>
         <section className="min-h-0">
           <header className="navbar mb-12 flex justify-between">
             <div className="navbar-start">
@@ -29,15 +46,14 @@ export default function Home() {
           </header>
 
           <div className=" text-center">
-            <p className="text-md py-5 leading-8">
-              An artist and designer currently studying in London.
+            <p className="text-12xl py-5 leading-8 text-[#7f1d1d]">
+              LoLo
             </p>
           </div>
         </section>
         <section className="h-screen">
           {/* <Homegraphic scale={100}/> */}
-          <TitoImport/>
-          
+          <GroupAnimImport />
         </section>
         <section>
           <FlipLink
