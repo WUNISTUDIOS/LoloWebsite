@@ -9,8 +9,9 @@ import { MathUtils } from 'three'
 export function GroupAnimImport(props) {
 
   const group = useRef()
+  const titospin = useRef()
 
-  const { nodes, materials, animations } = useGLTF('/groupmodelsanim1.glb')
+  const { nodes, materials, animations } = useGLTF('/groupmodelsanim4.glb')
   const { actions } = useAnimations(animations, group)
 
 
@@ -20,7 +21,7 @@ export function GroupAnimImport(props) {
 
   useFrame(({}) => {
 
-      group.current?.rotateY(MathUtils.degToRad(0.2))
+      titospin.current?.rotateY(MathUtils.degToRad(0.2))
 
       Object.keys(actions).forEach((key)=>{
         const action = actions[key]
@@ -34,61 +35,50 @@ export function GroupAnimImport(props) {
 
   return (
     <group 
-        onPointerUp={() => {motionVal.set(0)}} 
-        onPointerDown={() => {motionVal.set(2)}} 
-        ref={group} 
-        {...props} 
-        dispose={null}
+    onPointerUp={() => {motionVal.set(0)}} 
+    onPointerDown={() => {motionVal.set(2)}} 
+    ref={group} 
+    {...props} 
+    dispose={null}
     >
-      <group name="Scene">
-        <mesh
-          name="SpikeHead"
-          castShadow
-          receiveShadow
-          geometry={nodes.SpikeHead.geometry}
-          material={materials.Material_0}
-          position={[-0.004, 0, 0]}
-        />
-        <group name="Deborah" position={[0, -0.322, 0]} rotation={[Math.PI / 2, 0, 0]}>
-          <group name="geom" position={[0, 0, 0.037]}>
-            <mesh
-              name="mesh"
-              castShadow
-              receiveShadow
-              geometry={nodes.mesh.geometry}
-              material={materials.material}
-            />
-          </group>
-          <group name="materials" />
-        </group>
-        <group name="StarHead" position={[-0.006, 0.673, 0]} rotation={[Math.PI / 2, 0, 0]}>
-          <group name="starheadgeom" position={[0, 0, 0.001]}>
-            <mesh
-              name="mesh001"
-              castShadow
-              receiveShadow
-              geometry={nodes.mesh001.geometry}
-              material={materials['material.002']}
-              position={[0, 0, -0.016]}
-            />
-          </group>
-          <group name="starheadmaterials" />
-        </group>
-        <group name="Tito" position={[0, 0.319, 0]} rotation={[Math.PI / 2, 0, 0]}>
-          <group name="titogeom">
-            <mesh
-              name="mesh002"
-              castShadow
-              receiveShadow
-              geometry={nodes.mesh002.geometry}
-              material={materials['material.005']}
-            />
-          </group>
-          <group name="titomaterials" />
-        </group>
-      </group>
+      <mesh
+        ref={titospin}
+        castShadow
+        receiveShadow
+        geometry={nodes.SpikeHead.geometry}
+        material={materials.Material_0}
+        position={[0.242, 0, 0]}
+      />
+
+      <mesh
+        ref={titospin}
+        castShadow
+        receiveShadow
+        geometry={nodes.mesh.geometry}
+        material={materials.material}
+        position={[-0.269, 0.174, -0.002]}
+      />
+
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.mesh001.geometry}
+        material={materials['material.002']}
+        position={[0.517, 0, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.mesh002.geometry}
+        material={materials['material.005']}
+      />
     </group>
   )
 }
 
-useGLTF.preload('/groupmodelsanim1.glb')
+useGLTF.preload('/groupmodelsanim4.glb')
+
+
+
+
+

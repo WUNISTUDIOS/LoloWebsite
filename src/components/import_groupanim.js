@@ -14,8 +14,10 @@ export default function GroupImport(){
 
     <OrbitControls makeDefault />
 
-    <directionalLight position={ [ 1, 2, 3 ] } intensity={ 4.5 } />
-    <ambientLight intensity={ 1.5 } />
+    <directionalLight position={ [ 1, 2, 5 ] } intensity={ 2 } />
+    <directionalLight position={ [ 1, 2, -5 ] } intensity={ 2 } />
+
+    <ambientLight intensity={ 2 } />
 
     <Suspense>      
     <mesh scale={20} position={[0,-3,0]}>
