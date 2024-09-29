@@ -18,11 +18,19 @@ const GroupAnimImport = dynamic(() => import('@/components/import_groupanim'),{
   ssr:false,
 })
 
+const SpikeHeadPage = dynamic(() => import('@/components/canvasSpikeHead'))
+
 const NanoFont = localFont({ 
   src: '../../public/fonts/NaNHoloGigawide-Ultra.ttf', 
   weight: '700', 
   variable: '--font-nano',
 })
+const MarioFont = localFont({ 
+  src: '../../public/fonts/Mario-Regular.otf', 
+  weight: '700', 
+  variable: '--font-Mario',
+})
+
 
 
 export default function Home() {
@@ -33,27 +41,31 @@ export default function Home() {
       </Head>
       <main className={NanoFont.className}>
         <section className="min-h-0">
-          <header className="navbar mb-12 flex justify-between">
-            <div className="navbar-start">
-              <Link href="/">LOGO</Link>
-            </div>
-            <div className="navbar-end">
-              <div>
-                  <FlipLinkNav href="/sculptures">Sculptures</FlipLinkNav></div>
-              <div>
-                  <FlipLinkNav href="/shoes">Shoes</FlipLinkNav></div>
+          <header className="navbar mb-12 p-5 flex justify-between">
+            <div className="navbar-start flex items-center">
+              <Link 
+              href="/"
+              >
+                <img
+                  src="/TitoHeader2.png"
+                  alt="TitoHeader"
+                  width={150}
+                  height={150}
+                >
+                </img>
+              </Link>
+                <p className="text-8xl md:text-10xl lg:text-12xl py-5 p-5 pt-10 leading-8 text-[#7f1d1d]">
+                  LoLo
+                </p>
+
             </div>
           </header>
 
-          <div className=" text-center">
-            <p className="text-12xl py-5 leading-8 text-[#7f1d1d]">
-              LoLo
-            </p>
-          </div>
         </section>
-        <section className="h-screen">
+        <section>
           {/* <Homegraphic scale={100}/> */}
-          <GroupAnimImport />
+          <SpikeHeadPage />
+          {/* <GroupAnimImport /> */}
         </section>
         <section>
           <FlipLink
@@ -63,7 +75,8 @@ export default function Home() {
         </section>
         
 
-<footer className="rounded-lg shadow m-4 dark:bg-blue-800">
+{/* <footer className="font-sans md:font-serif rounded-lg shadow m-4 dark:bg-blue-800"> */}
+<footer className={MarioFont.className}>
     <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-left md:justify-between">
       <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://cgidoggs.world//" className="hover:underline">cgistudio</a>. All Rights Reserved.
     </span>

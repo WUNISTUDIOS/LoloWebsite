@@ -10,7 +10,10 @@ import { GroupAnimImport } from "./groupimportanim"
 export default function GroupImport(){
 
     return <>
-    <Canvas>
+    <div className="h-screen" >
+    <Canvas
+        fallback={<div>Sorry no WebGL supported!</div>}
+    >
 
     <OrbitControls makeDefault />
 
@@ -26,6 +29,7 @@ export default function GroupImport(){
     </Suspense>
 
     </Canvas>
+    </div>
 </>
 
 

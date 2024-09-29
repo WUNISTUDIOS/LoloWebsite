@@ -11,7 +11,10 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily:{
-      mario: ["var--font-nano"]
+      nano: ["var--font-nano"]
+    },
+    fontFamily:{
+      mario: ["var--font-mario"]
     },
     fontSize: {
       '10xl': '10rem',
