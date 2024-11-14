@@ -17,6 +17,10 @@ module.exports = {
       mario: ["var--font-mario"]
     },
     fontSize: {
+      '2xs': '.5rem',
+      '5xl': '3rem',
+      '8xl': '6rem',
+      '9xl': '8rem',
       '10xl': '10rem',
       '11xl': '12rem',
       '12xl': '14rem',

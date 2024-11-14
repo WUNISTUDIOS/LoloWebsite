@@ -19,6 +19,7 @@ export function AllSpikeAnim(props) {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
+        
         <mesh
           name="mesh"
           castShadow
