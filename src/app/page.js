@@ -4,20 +4,8 @@ import Link from "next/link"
 import dynamic from "next/dynamic"
 import localFont from 'next/font/local'
 
-
-
-import Homegraphic from "@/components/homegraphic"
-import TitoImport from "@/components/tito_import"
 import {FlipLinkNav, FlipLink} from "@/components/flipLink"
 import ToMail from "@/components/email-button"
-
-const CompTito = dynamic(() => import('@/components/tito_import'),{
-  ssr:false,
-})
-
-const GroupAnimImport = dynamic(() => import('@/components/import_groupanim'),{
-  ssr:false,
-})
 
 const SpikeHeadPage = dynamic(() => import('@/components/canvasSpikeHead'))
 
@@ -48,6 +36,9 @@ export default function Home() {
               </li>
               <li>
                 <ToMail />
+              </li>
+              <li>
+                <Link href="/sculptures">documentation</Link>
               </li>
             </ul>
           </div>
