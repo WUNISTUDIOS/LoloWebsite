@@ -7,6 +7,7 @@ module.exports = {
  
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    
   ],
   theme: {
     extend: {},
@@ -27,5 +28,6 @@ module.exports = {
       // Add more custom sizes as needed
     },
   },
-  plugins: [],
+  plugins: [
+  ],
 }

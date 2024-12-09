@@ -1,42 +1,92 @@
-"use client"
-import Head from "next/head"
-
-
-import { Gallery } from "react-grid-gallery"
+"use client";
+import React, { useState } from "react";
+import { Gallery } from "react-grid-gallery";
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
 
 export default function Documentation() {
-  const images = [
+  const panels = [
     {
-      src: "images/lolofigure/IMG_9448.jpg",
-      width: 750,
-      height: 926,
-      isSelected: false,
-      caption: "matrix men"
+      src: "/images/compressedRenamedImages/devilmanhead.jpg",
     },
     {
-      src: "images/lolofigure/IMG_9502.png",
-      width: 1000,
-      isSelected: false,
-      caption: ""
-    },    {
-      src: "",
-      width: 1000,
-      isSelected: false,
-      caption: ""
+      src: "/images/compressedRenamedImages/fourteam.jpg",
+      caption: "",
+    },
+    {
+      src: "/images/compressedRenamedImages/fullsnoopback.jpg",
+      caption: "",
+    },
+    {
+      src: "/images/compressedRenamedImages/derrpzpatterns.jpg",
+      caption: "",
+    },
+    {
+      src: "/images/compressedRenamedImages/devlmanclose.jpg",
+      caption: "",
+    },
+    {
+      src: "/images/compressedRenamedImages/earlytoronto.jpg",
+      caption: "",
+    },
+    {
+      src: "/images/compressedRenamedImages/eno.jpg",
+      caption: "",
+    },
+    {
+      src: "/images/compressedRenamedImages/layingdevilman.jpg",
+      caption: "",
+    },
+    {
+      src: "/images/compressedRenamedImages/lildevilman.jpg",
+      caption: "",
+    },
+    {
+      src: "/images/compressedRenamedImages/loloshirt.jpg",
+      caption: "",
+    },
+    {
+      src: "/images/compressedRenamedImages/longfeet.jpg",
+      caption: "",
+    },
+    {
+      src: "/images/compressedRenamedImages/nofacepatterns.jpg",
+      caption: "",
+    },
+    {
+      src: "/images/compressedRenamedImages/lostbusiness.jpg",
+      caption: "",
+    },
+    {
+      src: "/images/compressedRenamedImages/snoopfront.jpg",
+      caption: "",
     },
   ]
+  const [expandedIndex, setExpandedIndex] = useState(0)
+  const handleClick = (index) => {
+    setExpandedIndex(index)
+  }
   return (
-    <div>
-      <Head>
-        <title>Lolo's Website</title>
-      </Head>
-      <main className="px-10">
-        <section>
-          <div className="h-screen w-[90%] mx-auto p-20">
-            <Gallery images={images}/>
-          </div>
-        </section>
-      </main>
+    <main className="">
+    <div className=" flex items-center justify-center gap-4 flex-wrap">
+      {panels.map((panel, index) => (
+        <div
+          key={index}
+          onClick={() => handleClick(index)}
+          className={`
+            h-[50vh] md:h-[80vh] rounded-2xl bg-black cursor-pointer transition-all duration-500 ease-in-out
+            ${expandedIndex === index ? "w-[40%] md:w-[15%]" : "w-[20%] md:w-[10%] overflow-auto block"}
+          `}
+        >
+          <img
+            src={panel.src}
+            alt={`Image ${index + 1}`}
+            className="w-full h-full object-cover object-top aspect-w-16 aspect-h-9"
+          />
+        </div>
+      ))}
+      
     </div>
+  </main>
   )
 }

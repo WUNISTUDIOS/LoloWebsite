@@ -3,6 +3,10 @@ import "./globals.css"
 import Nav from "@/components/nav"
 import localFont from "next/font/local"
 
+import {FlipLinkNav, FlipLink} from "@/components/flipLink"
+import Link from "next/link"
+import ToMail from "@/components/email-button"
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -27,9 +31,25 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={NanoFont.className}>
           <Nav />
+          <section className="flex items-center justify-center p-4">
+          <div> 
+            <ul className="flex space-x-4 flex-wrap underline">
+              <li>
+                <FlipLink href="https://www.instagram.com/wersdiese/">INSTAGRAM</FlipLink>
+              </li>
+              <li>
+                <ToMail />
+              </li>
+              <li>
+                <Link href="/sculptures">documentation</Link>
+              </li>
+            </ul>
+          </div>
+        </section>
         {children}
+ 
         <footer className={MarioFont.className}>
-          <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-left md:justify-between text-2xl">
+          <div className="w-full  p-4 flex items-left justify-between text-2xl">
             <span className="sm:text-center">© 2024 </span> <span>
               <a href="https://cgidoggs.world//" className="hover:underline">cgistudio</a>. All Rights Reserved.
             </span>

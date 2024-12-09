@@ -28,22 +28,6 @@ export default function Home() {
         <title>Lolo's Website</title>
       </Head>
       <main className={NanoFont.className}>
-        <section className="flex items-center justify-center mx-auto px-4 py-2 sm:px-6 md:px-8 lg:px-12 xl:px-1">
-          <div> 
-            <ul className="flex space-x-4 underline">
-              <li>
-                <FlipLink href="https://www.instagram.com/wersdiese/">INSTAGRAM</FlipLink>
-              </li>
-              <li>
-                <ToMail />
-              </li>
-              <li>
-                <Link href="/sculptures">documentation</Link>
-              </li>
-            </ul>
-          </div>
-        </section>
-        
         <section >
           {/* <Homegraphic scale={100}/> */}
           <SpikeHeadPage />

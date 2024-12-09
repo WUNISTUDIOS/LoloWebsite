@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Nav() {
     return (
         <header>
-            <nav className="flex items-center justify-between fixed w-full">
+            <nav className="flex items-center justify-between p-2 w-full">
                 <ul className="flex w-full items-center">
                     <li>
                         <Link href="/">
