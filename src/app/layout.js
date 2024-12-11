@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
         <footer className={GatwickVariable.className}>
           <div className="w-full  p-4 flex items-left justify-between text-2xl">
             <span className="sm:text-center">© 2024 </span> <span>
-              <a href="https://cgidoggs.world//" className="hover:underline">cgistudio</a>. All Rights Reserved.
+              <a href="https://cgidoggs.world//" className="hover:underline">cgistudio</a>. lawl
             </span>
             <ul className="flex flex-wrap items-center ">
             </ul>

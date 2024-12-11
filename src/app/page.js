@@ -4,8 +4,6 @@ import Link from "next/link"
 import dynamic from "next/dynamic"
 import localFont from 'next/font/local'
 
-import {FlipLinkNav, FlipLink} from "@/components/flipLink"
-import ToMail from "@/components/email-button"
 
 const SpikeHeadPage = dynamic(() => import('@/components/canvasSpikeHead'))
 
@@ -24,7 +22,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Lolo's Website</title>
+      <title>Lolo&apos;s Website</title>
       </Head>
       <main className={NanoFont.className}>
         <section>
