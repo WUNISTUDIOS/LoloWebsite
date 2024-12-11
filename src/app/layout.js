@@ -16,13 +16,18 @@ export const metadata = {
 
 const NanoFont = localFont({ 
   src: '../../public/fonts/NaNHoloGigawide-Ultra.ttf', 
-  weight: '700', 
+  weight: '400', 
   variable: '--font-nano',
 })
 const MarioFont = localFont({ 
   src: '../../public/fonts/Mario-Regular.otf', 
-  weight: '700', 
+  weight: '400', 
   variable: '--font-Mario',
+})
+const GatwickVariable = localFont({ 
+  src: '../../public/fonts/Gatwick-Variable.ttf', 
+  weight: '1 999', 
+  variable: '--font-Gatwick',
 })
 
 
@@ -32,23 +37,23 @@ export default function RootLayout({ children }) {
       <body className={NanoFont.className}>
           <Nav />
           <section className="flex items-center justify-center p-4">
-          <div> 
-            <ul className="flex space-x-4 flex-wrap underline">
+          <div className={GatwickVariable.className}> 
+            <ul className="flex space-x-4  flex-wrap font-bold">
               <li>
-                <FlipLink href="https://www.instagram.com/wersdiese/">INSTAGRAM</FlipLink>
+                <Link target="_blank" href="https://www.instagram.com/wersdiese/">Instagram</Link>
               </li>
               <li>
                 <ToMail />
               </li>
               <li>
-                <Link href="/sculptures">documentation</Link>
+                <Link href="/sculptures">Process</Link>
               </li>
             </ul>
           </div>
         </section>
         {children}
  
-        <footer className={MarioFont.className}>
+        <footer className={GatwickVariable.className}>
           <div className="w-full  p-4 flex items-left justify-between text-2xl">
             <span className="sm:text-center">© 2024 </span> <span>
               <a href="https://cgidoggs.world//" className="hover:underline">cgistudio</a>. All Rights Reserved.

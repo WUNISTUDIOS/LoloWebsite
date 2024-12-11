@@ -15,11 +15,10 @@ const NanoFont = localFont({
   variable: '--font-nano',
 })
 const MarioFont = localFont({ 
-  src: '../../public/fonts/Mario-Regular.otf', 
+  src: '../../public/fonts/Mario-Regular.otf',  
   weight: '700', 
   variable: '--font-Mario',
 })
-
 
 export default function Home() {
   return (
@@ -28,9 +27,11 @@ export default function Home() {
         <title>Lolo's Website</title>
       </Head>
       <main className={NanoFont.className}>
-        <section >
+        <section>
+          <div className=" flex justify-center items-center mx-auto h-screen w-[90%] rounded-lg shadow-xl">
           {/* <Homegraphic scale={100}/> */}
           <SpikeHeadPage />
+          </div>
           {/* <GroupAnimImport /> */}
         </section>
       </main>

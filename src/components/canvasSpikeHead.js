@@ -9,9 +9,8 @@ import { AllSpikeAnim } from "./allSpikeAnim"
 export default function SpikeImportCanvas(){
 
     return <>
-        <div className="h-screen w-[90%] flex justify-center p-2 ">
         <Canvas
-            camera={{ fov: 75, position: [-10, 45, 20]}}
+            camera={{ fov: 75, position: [-3, 25, 10]}}
             fallback={<div>Sorry no WebGL supported!</div>}   
         >
             
@@ -38,7 +37,6 @@ export default function SpikeImportCanvas(){
         </Suspense>
 
         </Canvas>
-    </div>
 </>
 
 

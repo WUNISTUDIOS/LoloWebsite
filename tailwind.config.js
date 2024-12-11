@@ -12,10 +12,10 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily:{
-      nano: ["var--font-nano"]
-    },
-    fontFamily:{
-      mario: ["var--font-mario"]
+      nano: ["var--font-nano"],
+      mario: ["var--font-mario"],
+      gatwick: ["var--font-gatwick"],
+
     },
     fontSize: {
       '2xs': '.5rem',
