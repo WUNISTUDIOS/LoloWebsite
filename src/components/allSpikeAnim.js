@@ -14,7 +14,14 @@ export function AllSpikeAnim(props) {
   const { nodes, materials, animations } = useGLTF('/allSpikeHeadAnim.glb')
   const { actions } = useAnimations(animations, group)
 
-  useEffect(() => void (actions.spikeHeadLooking.reset().play().paused = false), [])
+  // useEffect(() => void (actions.spikeHeadLooking.reset().play().paused = false), [])
+
+  useEffect(() => {
+    if (actions.spikeHeadLooking) {
+      actions.spikeHeadLooking.reset().play()
+      return () => actions.spikeHeadLooking.stop() // Cleanup to avoid memory leaks
+    }
+  }, [actions.spikeHeadLooking]) // Add dependency here
 
   return (
     <group ref={group} {...props} dispose={null}>

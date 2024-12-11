@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import Image from "next/image"
 
 export default function Documentation() {
   const panels = [
@@ -76,8 +76,10 @@ export default function Documentation() {
             ${expandedIndex === index ? "w-[40%] md:w-[15%]" : "w-[20%] md:w-[10%] overflow-auto block"}
           `}
         >
-          <img
+          <Image
             src={panel.src}
+            width={500}
+            height={500}
             alt={`Image ${index + 1}`}
             className="w-full h-full object-cover object-top aspect-w-16 aspect-h-9"
           />
