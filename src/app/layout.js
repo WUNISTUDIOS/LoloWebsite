@@ -34,19 +34,25 @@ const GatwickVariable = localFont({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <script async src="http://lolowebsite-umami-73934c-116-203-132-182.traefik.me/script.js"
+        data-website-id="256eb5ab-4dcb-44d2-a94c-9b7a6834b4c2"
+      />
       <body className={NanoFont.className}>
           <Nav />
-          <section className="flex items-center justify-center p-4">
+          <section className="flex items-center justify-center px-4">
           <div className={GatwickVariable.className}> 
             <ul className="flex space-x-4  flex-wrap font-bold">
               <li>
-                <Link target="_blank" href="https://www.instagram.com/wersdiese/">Instagram</Link>
+                <Link href="/"> Figures </Link>
+              </li>
+              <li>
+                <Link href="/sculptures">Process</Link>
               </li>
               <li>
                 <ToMail />
               </li>
               <li>
-                <Link href="/sculptures">Process</Link>
+                <Link target="_blank" href="https://www.instagram.com/wersdiese/">Instagram</Link>
               </li>
             </ul>
           </div>
@@ -56,7 +62,7 @@ export default function RootLayout({ children }) {
         <footer className={GatwickVariable.className}>
           <div className="w-full  p-4 flex items-left justify-between text-2xl">
             <span className="sm:text-center">© 2024 </span> <span>
-              <a href="https://cgidoggs.world//" className="hover:underline">cgistudio</a>. lawl
+              <a href="https://cgidoggs.world//" className="hover:underline">cgistudio</a>.love
             </span>
             <ul className="flex flex-wrap items-center ">
             </ul>

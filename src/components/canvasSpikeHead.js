@@ -1,6 +1,6 @@
 "use client"
-import React, { Suspense } from "react"
-import { OrbitControls, ScrollControls } from "@react-three/drei"
+import React, { Suspense, useRef } from "react"
+import { Loader, OrbitControls, ScrollControls } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
 
 import { Model } from "./spikeAnimImoprt"
@@ -8,7 +8,10 @@ import { AllSpikeAnim } from "./allSpikeAnim"
 
 export default function SpikeImportCanvas(){
 
+    // const meshRef = useRef()
+
     return <>
+        
         <Canvas
             camera={{ fov: 75, position: [-3, 25, 10]}}
             fallback={<div>Sorry no WebGL supported!</div>}   
@@ -16,7 +19,14 @@ export default function SpikeImportCanvas(){
             
             {/* <color attach="background" args={['#f5efe6']} /> */}
 
-        <OrbitControls makeDefault />
+        <OrbitControls 
+            makeDefault 
+            autoRotate 
+            autoRotateSpeed={.5}
+            enableDamping
+            dampingFactor={.1}
+            // target={meshRef.current ? meshRef.current.position : [0,0,0]}
+        />
 
         <directionalLight position={ [ 1, 2, 5 ] } intensity={ 2 } />
         <directionalLight position={ [ 1, 2, -5 ] } intensity={ 2 } />
@@ -30,13 +40,14 @@ export default function SpikeImportCanvas(){
                     <Model />
             </mesh>
         </ScrollControls> */}
-            <mesh scale={20} >
+            <mesh scale={20}  >
                 <AllSpikeAnim />
                 
             </mesh>
         </Suspense>
 
         </Canvas>
+        <Loader />
 </>
 
 
