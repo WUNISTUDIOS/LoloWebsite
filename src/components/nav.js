@@ -3,8 +3,8 @@ import Link from 'next/link'
 export default function Nav() {
     return (
         <header>
-            <nav className="flex items-center justify-between p-2 w-full">
-                <ul className="flex w-full items-center">
+            <nav>
+                <ul className="flex justify-evenly items-center">
                     <li>
                         <Link href="/">
                             <img 
@@ -15,9 +15,9 @@ export default function Nav() {
                             />
                         </Link>
                     </li>
-                    <li className="flex-grow text-center">
+                    <li>
                         <Link href="/">
-                            <span className="w-full text-center block text-8xl sm:text-10xl xl:text-12xl font-bold text-red-800">
+                            <span className="text-center text-5xl md:text-10xl xl:text-12xl font-bold text-red-800">
                                 LoLo
                             </span>
                         </Link>
