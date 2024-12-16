@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
       />
       <body className={NanoFont.className}>
           <Nav />
-          <section className="flex items-center justify-center px-4">
+          <section className="flex items-center justify-center p-4">
           <div className={GatwickVariable.className}> 
             <ul className="flex space-x-4  flex-wrap font-bold">
               {/* <li>
