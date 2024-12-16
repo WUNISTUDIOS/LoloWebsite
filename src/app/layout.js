@@ -42,9 +42,9 @@ export default function RootLayout({ children }) {
           <section className="flex items-center justify-center px-4">
           <div className={GatwickVariable.className}> 
             <ul className="flex space-x-4  flex-wrap font-bold">
-              <li>
+              {/* <li>
                 <Link href="/"> Figures </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/sculptures">Process</Link>
               </li>
