@@ -2,16 +2,19 @@
 import React, { Suspense, useRef } from "react"
 import { Loader, OrbitControls, ScrollControls } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
-
+import { isWebGL2Available } from "@react-three/drei"
 import { Model } from "./spikeAnimImoprt"
 import { AllSpikeAnim } from "./allSpikeAnim"
-
+import { useEffect, useState } from "react"
 export default function SpikeImportCanvas(){
-
+    const [webGL2Available, setWebgk2Available] = useState(false)
+    useEffect(() =>{
+        setWebgk2Available(isWebGL2Available())
+    },[])
     // const meshRef = useRef()
 
     return <>
-        
+        {webGL2Available ? (
         <Canvas
             camera={{ fov: 75, position: [-3, 25, 10]}}
             fallback={<div>Sorry no WebGL supported!</div>}   
@@ -47,6 +50,12 @@ export default function SpikeImportCanvas(){
         </Suspense>
 
         </Canvas>
+        ) : ( 
+            <div className="justify-center align-center">
+                <h1>3D functionality not supported</h1>
+                <p> get off the Zuck Browser pls</p>
+            </div>
+        )}
         <Loader />
 </>
 

@@ -1,8 +1,10 @@
+"use client"
 import Image from "next/image"
 import Head from "next/head"
 import Link from "next/link"
 import dynamic from "next/dynamic"
 import localFont from 'next/font/local'
+import { useEffect, useState } from "react"
 
 
 const SpikeHeadPage = dynamic(() => import('@/components/canvasSpikeHead'))
