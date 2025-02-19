@@ -14,7 +14,7 @@ export default function SpikeImportCanvas(){
     // const meshRef = useRef()
 
     return <>
-        {webGL2Available ? (
+        {/* {webGL2Available ? ( */}
         <Canvas
             camera={{ fov: 75, position: [-3, 25, 10]}}
             fallback={<div>Sorry no WebGL supported!</div>}   
@@ -50,13 +50,13 @@ export default function SpikeImportCanvas(){
         </Suspense>
 
         </Canvas>
-        ) : ( 
+        {/* ) : ( 
             <div className="justify-center align-center">
                 <h1>3D functionality not supported</h1>
                 <p> get off the Zuck Browser pls</p>
             </div>
-        )}
-        <Loader />
+        )} */}
+        {/* <Loader /> */}
 </>
 
 
