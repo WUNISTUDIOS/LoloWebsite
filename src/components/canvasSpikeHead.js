@@ -16,7 +16,7 @@ export default function SpikeImportCanvas() {
     return <>
         {/* {webGL2Available ? ( */}
         <Canvas
-            camera={{ fov: 75, position: [-7, 5, 1.5] }}
+            camera={{ fov: 75, position: [-6, 5, 10] }}
             fallback={<div>Sorry no WebGL supported!</div>}
         >
 
